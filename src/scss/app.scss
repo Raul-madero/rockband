@@ -1,5 +1,2 @@
-@import "./base/variables";
-@import "./contenido/contenido";
-body {
-    background-color: $black;
-};
+@use "base";
+@use "contenido";

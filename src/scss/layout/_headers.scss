@@ -3,13 +3,35 @@
 .header {
     background-color: v.$verde;
     h1 {
+        text-align: center;
         color: v.$blanco;
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 2rem;
+        @include m.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
 .navegacion-principal {
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }
     a {
+        display: block;
+        text-align: center;
+        margin-block-end: 1rem;
         font-size: 2.4rem;
         color: v.$blanco;
+        @include m.tablet {
+            margin: 0;
+        }
         &:hover {
             color: v.$amarillo;
         }

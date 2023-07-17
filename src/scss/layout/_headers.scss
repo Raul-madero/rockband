@@ -1,12 +1,9 @@
-@use '../base/variables' as v;
-@use '../base/mixins' as m;
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
 .header {
     background-color: v.$verde;
     h1 {
         color: v.$blanco;
-    }
-    .prueba {
-        @include m.heading;
     }
 }
 .navegacion-principal {

@@ -43,12 +43,19 @@ function versionAvif(done) {
         .pipe(dest('build/img'))
     done()
 }
+function javascript(done) {
+    src('src/js/**/*.js')
+        .pipe(dest('build/js'));
+    done();
+}
 function dev(done) {
     watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', javascript);
     done()
 }
 exports.css = css;
+exports.js = javascript;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
 exports.imagenes = imagenes;
-exports.dev = parallel(versionWebp, versionAvif, dev, imagenes);
+exports.dev = parallel(versionWebp, versionAvif, dev, imagenes, javascript);

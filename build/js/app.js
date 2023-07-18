@@ -2,8 +2,33 @@ document.addEventListener('DOMContentLoaded', function() {
     iniciarApp();
 });
 function iniciarApp() {
+    navegacionFija();
     crearGaleria();
+    scrollNav();
 };
+function navegacionFija() {
+    const barra = document.querySelector('.header');
+    const sobreFestival = document.querySelector('.sobre-festival');
+    window.addEventListener('scroll', function() {
+        console.log(sobreFestival.getBoundingClientRect());
+        if(sobreFestival.getBoundingClientRect().bottom < 0) {
+            barra.classList.add('fijo');
+        }else {
+            barra.classList.remove('fijo');
+        }
+    })
+}
+function scrollNav() {
+    const enlaces = document.querySelectorAll('.navegacion-principal a');
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', function (e) {
+            e.preventDefault();
+            const seccionScroll = e.target.attributes.href.value;
+            const seccion = document.querySelector(seccionScroll);
+            seccion.scrollIntoView({behavior: "smooth"});
+        })
+    })
+}
 function crearGaleria() {
     const galeria = document.querySelector('.galeria-imagenes');
     for (let i = 1; i <= 12; i++) {

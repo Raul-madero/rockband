@@ -366,6 +366,13 @@ img {
 .header {
   background-color: #4cbbb3;
 }
+@media (min-width: 768px) {
+  .header.fijo {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0.3rem 0.3rem 0.3rem #333;
+  }
+}
 .header h1 {
   text-align: center;
   color: #fff;
@@ -669,4 +676,14 @@ img {
   background-color: #752f97;
   font-size: 2.4rem;
   font-weight: 700;
+}
+
+.site-footer {
+  background-color: #f53756;
+  padding: 1rem;
+}
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  color: #fff;
 }

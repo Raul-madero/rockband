@@ -33,8 +33,12 @@ function mostrarImagen(id) {
         overlay.classList.add('overlay');
         cerrarModal.textContent = 'X';
         cerrarModal.classList.add('btn-cerrar');
+        overlay.onclick = function() {
+            seleccion.classList.remove('fijar-body');
+            overlay.remove();
+        };
         cerrarModal.onclick = function() {
-            seleccion.classList.remove('fijar-body')
+            seleccion.classList.remove('fijar-body');
             overlay.remove();
         };
         overlay.appendChild(cerrarModal);
